@@ -4,10 +4,11 @@
 
 Key Findings from the Analysis:
 
-**EfficientNet** with transfer learning is the best solution.
+**EfficientNet** with transfer learning is one the most efficient solutions.
 
-Among the evaluated models, EfficientNet demonstrated superior performance in facial emotion recognition tasks compared to classical CNNs, VGG16, and ResNet architectures.
+Among the evaluated models, EfficientNet demonstrated good and fast performance in facial emotion recognition.
 
+Models tried: classical CNNs, VGG16, EfficientNet and ResNet architectures.
 
 **Model Architecture:** EfficientNet-B0
 
@@ -16,7 +17,6 @@ Among the evaluated models, EfficientNet demonstrated superior performance in fa
 **Transfer Learning:** Initialized with pretrained ImageNet weights, excluding the original classification head (include_top=False), then fine-tuned by adding a custom classification head tailored to the number of facial emotion classes in your dataset.
 
 **Regularization:** Drop connect rate set to apply stochastic depth regularization during fine-tuning, improving generalization without affecting pretrained weights.
-
 
 **Training Configuration:**
 
@@ -36,7 +36,7 @@ Model Complexity and Efficiency:
 
 Performance: EfficientNet-B0 provides a strong balance between accuracy and efficiency, achieving competitive accuracy in facial emotion recognition while maintaining low computational cost, making it ideal for real-time or embedded applications.
 
-**We tested 1 ANN, 3 CNN, 3 transfer learning models and one complex CNN.**
+**I tested 1 ANN, 3 CNN, 3 transfer learning models and one complex CNN.**
 
 **ANN**  accuracy: 0.4233  val_accuracy: 0.46177 test:accuracy: 0.5490
 
@@ -50,10 +50,9 @@ Performance: EfficientNet-B0 provides a strong balance between accuracy and effi
 
 **ResNet V2** w/ GAP accuracy: 0.5424  val_accuracy: 0.5843 test:accuracy: 0.5552
 
-**EfficientNet w/ GAP accuracy: 0.7703 val_accuracy: 0.1605 test:accuracy: 0.6427**
+**EfficientNet w/ GAP accuracy: 0.7703 val_accuracy: 0.1605 test:accuracy: 0.6427** (Overfitting)
 
 **Complex CNN** accuracy: 0.6740   val_accuracy: 0.7366 test:accuracy: 0.7510
-
 
 **CNNs are better than ANNs for facial recognition** because they automatically extract spatial features (such as edges, textures, and shapes) from images using convolutional layers, making them more accurate and efficient for image-based tasks.
 
@@ -112,17 +111,19 @@ Faster Convergence, Higher Accuracy, Better Generalization.
 **Problem and solution summary**
 
 The proposed solution design—using **EfficientNet-B0** with transfer learning was chosen because it offers a strong balance between accuracy and computational efficiency.
+Even if, in this particular case, the model is overfitting, it is very efficient in term on time & cost.
 
 EfficientNet-B0’s architecture, which scales network depth, width, and resolution in a compound manner, enables effective extraction of fine-grained facial features necessary for distinguishing emotions while maintaining a lightweight model suitable for real-time and resource-constrained environments.
 
-2nd option : **CNN**
+**CNN**
 
 With higher accuracy than models solely based on a one-dimensional (ANN), CNN models recognize and capture spatial hierarchies in the image, meaning that spatial relationships between pixels (such as edges, textures, and patterns) are well preserved and understood.
 
-Based on this research (the final usage not being specified) my final proposition tends to opt for a "simple" **CNN (model_2)** or,
+Based on this research (the final usage not being specified) my final proposition tends to opt for a "simple" **CNN (model_2)** .
+More adaptability.
  _____________________________________________________________________
 
-It all depends on the time and money to invest in the final project.
+It all depends on time and money to invest in the final project.
 For this task, where the reference images are small and of relatively poor quality, opting for a simple and lightweight model seems to be the two best options.
 
 The first, flexible, adaptable, and personalized CNN, will provide a better option in terms of reuse within the company for similar tasks. This requires more research in terms of parameter tuning.
@@ -138,11 +139,9 @@ The **problem** addressed is the challenge of accurately recognizing Human facia
 
 These **difficulties** impact applications in mental health monitoring, Human-computer interaction, security, and business intelligence, where understanding emotional states is crucial for effective communication, safety, and customer engagement.
 
-
 The proposed **solution** design—using EfficientNet-B0 with transfer learning was chosen because it offers a strong balance between accuracy and computational efficiency.
 
 **EfficientNet-B0**’s architecture, which scales network depth, width, and resolution in a compound manner, enables effective extraction of fine-grained facial features necessary for distinguishing emotions while maintaining a lightweight model suitable for real-time and resource-constrained environments.
-
 
 **Transfer learning** leverages pretrained weights on large datasets, improving recognition accuracy and reducing training time, which is essential given the variability and complexity of facial emotion data.
 
