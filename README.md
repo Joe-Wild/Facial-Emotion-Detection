@@ -4,7 +4,7 @@
 
 Key Findings from the Analysis:
 
-**EfficientNet** with transfer learning is one the most efficient solutions.
+**EfficientNet** with transfer learning is one of the most effective solutions for rapid implementation of facial emotion detection.
 
 Among the evaluated models, EfficientNet demonstrated good and fast performance in facial emotion recognition.
 
